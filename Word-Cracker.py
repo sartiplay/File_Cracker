@@ -9,6 +9,7 @@ KEYS_SMALL = "abcdefghijklmnopqrstuvwxyz"
 KEYS_NUMBERS = "1234567890"
 KEYS = KEYS_BIG + KEYS_SMALL + KEYS_NUMBERS #Full Keys
 
+OPKEY = "--Generate.Admin.File#MK"
 
 CURR_FILE_PATH = __file__.replace("\Word-Cracker.py", "")
 
@@ -93,7 +94,7 @@ try:
             BytesToWrite = 1000
     elif(USER_KEY1 == "-h"):
         UserHelpDisplay()
-    elif(USER_KEY1 == "--Generate.Admin.File#MK"):  #Argument to Generate Admin FILE
+    elif(USER_KEY1 == OPKEY):  #Argument to Generate Admin FILE
         print("\nAdmin File Generatet, Launch with op -OP\nIgnore Error Message!!\n")
         GenerateOPFile()
     else:
