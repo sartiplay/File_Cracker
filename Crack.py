@@ -1,22 +1,11 @@
+import imp
 import os
 import os.path
 import sys
 import random
+from config import *
 
 
-
-KEYS_BIG = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-KEYS_SMALL = "abcdefghijklmnopqrstuvwxyz"
-KEYS_NUMBERS = "1234567890"
-KEYS_SYMBOLS = "}{][/_-.%#*+"
-KEYS = KEYS_BIG + KEYS_SMALL + KEYS_SYMBOLS + KEYS_NUMBERS  #Full Keys
-
-OPKEY = "--Generate.Admin.File#MK"
-
-CURR_FILE_PATH = __file__.replace("\Word-Cracker.py", "")
-
-
-OP_FILENAME = "\MKCRACKER.OOPP" #Generatet OP FileName
 isOp = False
 
 
@@ -31,19 +20,10 @@ TypeSelected = ""
 WordFilePath = ""
 BytesToWrite = 100000   #Can be Overriten if OverrideBytes = True
 
-
-
 #   Check if Operator File has been found!
 if(os.path.exists(CURR_FILE_PATH + OP_FILENAME)):
     print("Opperator File Found!\nContinue with OP Permissions")
     isOp = True
-
-
-
-def GenerateOPFile():   #Generates the OP File if User Input Argument is Correct
-    f = open(CURR_FILE_PATH + OP_FILENAME, "w")
-    f.write("Admin Key!")
-    f.close()
 
 
 def UserHelpDisplay(): #Display User Help with all Commands
@@ -60,7 +40,7 @@ def BreakFile(SelType, FilePath, Ammount):  #Methode to Break the File
             i1 = 0
             msg = ""
             if(isOp == False):
-                msg = "!!!FILE CRACKED WITH MK CRACKER!!!"  #Message at the Top of the File ( Will be Generatet without the OP File )
+                msg = TEMPLATE #Message at the Top of the File ( Will be Generatet without the OP File )
             
             while(i1 < Ammount):
                 msg += KEYS[random.randrange(0, len(KEYS))]
@@ -72,7 +52,7 @@ def BreakFile(SelType, FilePath, Ammount):  #Methode to Break the File
             i2 = 0
             msg = ""
             if(isOp == False):
-                msg = "!!!FILE CRACKED WITH MK CRACKER!!!"  #Message at the Top of the File ( Will be Generatet without the OP File )
+                msg = TEMPLATE  #Message at the Top of the File ( Will be Generatet without the OP File )
             
             while(i2 < Ammount):
                 msg += KEYS[random.randrange(0, len(KEYS))]
@@ -84,7 +64,7 @@ def BreakFile(SelType, FilePath, Ammount):  #Methode to Break the File
         i3 = 0
         msg = ""
         if(isOp == False):
-            msg = "\n!!!FILE CRACKED WITH MK CRACKER!!!\n\n"  #Message at the Top of the File ( Will be Generatet without the OP File )
+            msg = TEMPLATE + "\n\n"  #Message at the Top of the File ( Will be Generatet without the OP File )
         while(i3 < Ammount):
             msg += KEYS[random.randrange(0, len(KEYS))]
             i3 = i3 + 1
