@@ -1,6 +1,9 @@
-# File_Cracker
-Can Break ( .docx, .txt, .ppt, ... ) files with just the console.
-# Move the File to Break into the same Folder as the Word-Cracker.py
-#
+# File Cracker
+Write Nonsense Bytes into any File you want, ( good for pranking your teachers ;D )
+
+**Move the File to Break into the same Folder as the Crack.py**
+
+**To Use the _Generate_ file type in python Generate.py**
+
 # USAGE
-python Word-Cracker.py -d [FILE] -a 1000
+python Crack.py -d [FILE] -a 1000
