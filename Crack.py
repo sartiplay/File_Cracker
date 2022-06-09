@@ -28,7 +28,7 @@ if(os.path.exists(CURR_FILE_PATH + OP_FILENAME)):
 def UserHelpDisplay(): #Display User Help with all Commands
     print("Word-Cracker Arguments :\n-d = Destroy\n-c = Cracked\n-s = small\n-a to change to Ammount of bytes to Write!")
     print("-append (Appends the Keys to the existing Files) or -write (Delets all existing Characters / Data in File and replaces it with the new Keys) to change the Override Type ( Standart Override is -write (Delets all the Content already in the File)")
-    print("Usage ([Word-Cracker.py -d [WordFile] (-a) ([Ammount])")
+    print("Usage ([Crack.py -d [WordFile] (-a) ([Ammount])")
     
 
 
@@ -126,7 +126,7 @@ try:
         print("\nAdmin File Generatet, Launch with op -OP\nIgnore Error Message!!\n")
         GenerateOPFile()
     else:
-        print(f"{USER_KEY1} is not a Valid Argument, tpye in Word-Cracker.py -h for help")
+        print(f"{USER_KEY1} is not a Valid Argument, tpye in Crack.py -h for help")
         quit()
 except:
     print(f"{USER_KEY1} : is an invalid Arguement type -h for help!")
